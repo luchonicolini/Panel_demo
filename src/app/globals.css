@@ -1,0 +1,170 @@
+@layer reset, theme, base, astryx-base, astryx-theme, components, utilities;
+
+@import "@astryxdesign/core/reset.css";
+@import "@astryxdesign/core/astryx.css";
+@import "@astryxdesign/theme-neutral/theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 33% 98%;
+    --foreground: 255 22% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 255 22% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 255 22% 10%;
+    --primary: 80 84% 68%;
+    --primary-foreground: 255 25% 10%;
+    --secondary: 258 100% 93%;
+    --secondary-foreground: 255 25% 15%;
+    --muted: 255 25% 96%;
+    --muted-foreground: 255 8% 45%;
+    --accent: 258 100% 93%;
+    --accent-foreground: 255 25% 15%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 258 25% 90%;
+    --input: 258 20% 88%;
+    --ring: 80 65% 42%;
+    --radius: 1rem;
+    --brand: #c9f26b;
+    --brand-ink: #17141f;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+
+  ::selection {
+    background: var(--brand);
+    color: var(--brand-ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(23, 20, 31, 0.18) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(23, 20, 31, 0.18);
+    border-radius: 999px;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .brand-button {
+    background: var(--brand);
+    color: var(--brand-ink);
+  }
+
+  .brand-button:hover {
+    filter: brightness(0.96);
+  }
+
+  .bg-brand-soft {
+    background-color: color-mix(in srgb, var(--brand) 55%, white);
+  }
+
+  .bg-brand-faint {
+    background-color: color-mix(in srgb, var(--brand) 20%, white);
+  }
+}
+
+/* Numeric inputs keep a comfortable size on mobile and hide native spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Astryx comparte la identidad Nicolini: tipografía, acento lima y superficies lilac. */
+[data-astryx-theme="neutral"] {
+  --font-astryx: var(--font-manrope), system-ui, sans-serif;
+  --font-family-body: var(--font-astryx);
+  --font-family-heading: var(--font-astryx);
+  --font-family-label: var(--font-astryx);
+  --font-family-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-accent: #c9f26b;
+  --color-accent-muted: #e9ddff;
+  --color-text-accent: #17141f;
+  --color-background-body: #f7f5fb;
+  --color-background-surface: #ffffff;
+  --color-background-card: #ffffff;
+  --color-background-popover: #ffffff;
+  --color-background-muted: #f1ecfa;
+  --color-text-primary: #17141f;
+  --color-text-secondary: #6f6879;
+  --color-border: #e7e2ef;
+  --color-border-emphasized: #d8d0e6;
+  --color-overlay: rgba(23, 20, 31, 0.35);
+
+  --radius-inner: 0.5rem;
+  --radius-element: 0.75rem;
+  --radius-container: 1rem;
+}
+
+/* Kbd dentro del sidebar oscuro. */
+.nicolini-command-kbd .astryx-kbd-key {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.72);
+  box-shadow: none;
+}
+
+/* El item resaltado de la palette usa el lilac de la marca. */
+.nicolini-command-palette .astryx-command-palette-item[data-highlighted] {
+  background: color-mix(in srgb, #e9ddff 58%, white);
+}
+
+.nicolini-command-palette {
+  border-radius: 1.25rem;
+}

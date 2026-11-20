@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Soporte para notebook">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2eaff"/>
+      <stop offset="1" stop-color="#dac7ff"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#cfc9da"/>
+      <stop offset="0.5" stop-color="#9b94ab"/>
+      <stop offset="1" stop-color="#6f687e"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b3548"/>
+      <stop offset="1" stop-color="#181520"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c9f26b" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#c9f26b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <circle cx="630" cy="210" r="170" fill="url(#glow)"/>
+  <ellipse cx="400" cy="630" rx="250" ry="40" fill="#2a2440" opacity="0.14"/>
+
+  <polygon points="186,590 332,318 662,318 516,590" fill="#7c7489" opacity="0.35"/>
+  <polygon points="206,576 342,332 630,332 494,576" fill="url(#metal)"/>
+  <polygon points="230,568 356,346 610,346 484,568" fill="#b7b0c3" opacity="0.45"/>
+
+  <g transform="rotate(-16 400 420)">
+    <rect x="226" y="196" width="360" height="240" rx="18" fill="url(#screen)"/>
+    <rect x="240" y="210" width="332" height="200" rx="10" fill="#292433"/>
+    <rect x="262" y="236" width="120" height="8" rx="4" fill="#c9f26b" opacity="0.55"/>
+    <rect x="262" y="258" width="210" height="6" rx="3" fill="#8a8298" opacity="0.5"/>
+    <rect x="262" y="274" width="180" height="6" rx="3" fill="#8a8298" opacity="0.35"/>
+    <rect x="262" y="300" width="90" height="58" rx="8" fill="#4a4458"/>
+    <rect x="364" y="300" width="90" height="58" rx="8" fill="#4a4458"/>
+    <rect x="466" y="300" width="90" height="58" rx="8" fill="#4a4458"/>
+  </g>
+
+  <rect x="300" y="540" width="220" height="26" rx="13" fill="url(#metal)"/>
+  <rect x="318" y="566" width="184" height="14" rx="7" fill="#2a2534" opacity="0.7"/>
+  <circle cx="470" cy="553" r="5" fill="#c9f26b" opacity="0.7"/>
+</svg>
