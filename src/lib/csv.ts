@@ -201,7 +201,7 @@ export function buildImportPreview(
     if (sku) skuCounts.set(sku, (skuCounts.get(sku) ?? 0) + 1);
   });
 
-  const rows: ImportRow[] = dataRecords.map((record, index) => {
+  const rows: ImportRow[] = dataRecords.map((record) => {
     const raw: Record<string, string> = {};
     headerMap.forEach((position, key) => {
       raw[key] = (record.values[position] ?? "").trim();

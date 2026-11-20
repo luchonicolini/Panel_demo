@@ -5,7 +5,7 @@ import { parsePriceInput } from "@/lib/format";
 const priceField = z.preprocess((value) => {
   if (typeof value === "string") return parsePriceInput(value);
   return value;
-}, z.number({ invalid_type_error: "Ingresá un precio válido" }).min(0, "El precio no puede ser negativo").max(99_999_999, "El precio es demasiado alto"));
+}, z.number({ error: "Ingresá un precio válido" }).min(0, "El precio no puede ser negativo").max(99_999_999, "El precio es demasiado alto"));
 
 const stockField = z.preprocess((value) => {
   if (typeof value === "string") {
@@ -14,7 +14,7 @@ const stockField = z.preprocess((value) => {
     return Number(trimmed.replace(/\./g, "").replace(",", "."));
   }
   return value;
-}, z.number({ invalid_type_error: "Ingresá un stock válido" }).int("El stock debe ser un número entero").min(0, "El stock no puede ser negativo").max(999_999, "El stock es demasiado alto"));
+}, z.number({ error: "Ingresá un stock válido" }).int("El stock debe ser un número entero").min(0, "El stock no puede ser negativo").max(999_999, "El stock es demasiado alto"));
 
 const skuField = z
   .string()
@@ -57,7 +57,7 @@ export const settingsSchema = z.object({
     .refine((value) => value.length >= 8 && value.length <= 15, "Ingresá el número con código de país, solo dígitos"),
   lowStockThreshold: z.preprocess(
     (value) => (typeof value === "string" ? Number(value.trim()) : value),
-    z.number({ invalid_type_error: "Ingresá un umbral válido" }).int("Usá un número entero").min(1, "El umbral debe ser al menos 1").max(10_000, "El umbral es demasiado alto"),
+    z.number({ error: "Ingresá un umbral válido" }).int("Usá un número entero").min(1, "El umbral debe ser al menos 1").max(10_000, "El umbral es demasiado alto"),
   ),
   currency: z.string().trim().default("ARS"),
   locale: z.string().trim().default("es-AR"),

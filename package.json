@@ -3,12 +3,42 @@
   "version": "1.0.0",
   "private": true,
   "description": "Starter de e-commerce con panel de administración, catálogo público y venta por WhatsApp. Supabase + Next.js.",
+  "author": "Luciano Nicolini (https://github.com/luchonicolini)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luchonicolini/Panel_demo.git"
+  },
+  "homepage": "https://github.com/luchonicolini/Panel_demo#readme",
+  "bugs": {
+    "url": "https://github.com/luchonicolini/Panel_demo/issues"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "supabase",
+    "ecommerce",
+    "admin-dashboard",
+    "whatsapp",
+    "astryx",
+    "playwright",
+    "vitest"
+  ],
+  "engines": {
+    "node": ">=22.13.0",
+    "npm": ">=10"
+  },
+  "overrides": {
+    "postcss": "$postcss"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint": "next lint",
+    "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "npm run build && playwright test",
@@ -36,16 +66,19 @@
     "react-dom": "19.1.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^2.6.0",
-    "zod": "^3.25.76"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@astryxdesign/cli": "^0.7.17",
+    "@eslint/eslintrc": "^3.3.7",
     "@playwright/test": "^1.65.1",
     "@types/node": "^22.15.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.29",
+    "postcss": "^8.5.33",
     "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.2",

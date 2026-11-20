@@ -9,7 +9,6 @@ import {
   ArchiveRestore,
   Check,
   CheckCircle2,
-  ChevronDown,
   Copy,
   ExternalLink,
   ImageOff,
@@ -19,7 +18,6 @@ import {
   Pencil,
   Plus,
   Search,
-  Upload,
   X,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -440,7 +438,6 @@ function ProductList({
         {products.map((product) => {
           const low = product.stock < settings.lowStockThreshold;
           const busy = busyId === product.id;
-          const image = product.images[0];
 
           return (
             <div

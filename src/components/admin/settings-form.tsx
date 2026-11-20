@@ -32,7 +32,6 @@ export function SettingsForm({ settings }: { settings: StoreSettings }) {
   const [brandColor, setBrandColor] = useState(settings.brandColor);
   const [logoUrl, setLogoUrl] = useState<string | null>(settings.logoUrl);
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
-  const [logoFile, setLogoFile] = useState<File | null>(null);
   const [removeLogo, setRemoveLogo] = useState(false);
   const logoInputRef = useRef<HTMLInputElement>(null);
   const previewRef = useRef<string | null>(null);
@@ -57,7 +56,6 @@ export function SettingsForm({ settings }: { settings: StoreSettings }) {
       toast.success("Configuración guardada.");
       setLogoUrl(state.settings.logoUrl);
       setLogoPreview(null);
-      setLogoFile(null);
       setRemoveLogo(false);
       setStoreName(state.settings.storeName);
       setBrandColor(state.settings.brandColor);
@@ -74,7 +72,6 @@ export function SettingsForm({ settings }: { settings: StoreSettings }) {
       return;
     }
     if (logoPreview) URL.revokeObjectURL(logoPreview);
-    setLogoFile(file);
     setLogoPreview(URL.createObjectURL(file));
     setRemoveLogo(false);
   }
@@ -82,7 +79,6 @@ export function SettingsForm({ settings }: { settings: StoreSettings }) {
   function clearLogo() {
     if (logoPreview) URL.revokeObjectURL(logoPreview);
     setLogoPreview(null);
-    setLogoFile(null);
     setRemoveLogo(true);
     setLogoUrl(null);
     if (logoInputRef.current) logoInputRef.current.value = "";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   AlertTriangle,
@@ -52,11 +52,14 @@ export function CategoryManager({ categories }: { categories: Category[] }) {
   const [savingEdit, setSavingEdit] = useState(false);
   const [deletingPending, setDeletingPending] = useState(false);
 
-  const otherCategories = categories.filter((category) => category.id !== deleting?.id);
+  const otherCategories = useMemo(
+    () => categories.filter((category) => category.id !== deleting?.id),
+    [categories, deleting?.id],
+  );
 
   useEffect(() => {
     if (deleting) setReassignTo(otherCategories[0]?.id ?? "");
-  }, [deleting?.id]);
+  }, [deleting, otherCategories]);
 
   async function handleCreate(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

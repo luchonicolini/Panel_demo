@@ -32,6 +32,13 @@ yarn-error.log*
 .vercel
 *.tsbuildinfo
 
+# editors
+.vscode/
+.idea/
+
+# coverage
+/coverage/
+
 # tests
 /test-results/
 /playwright-report/
