@@ -2,6 +2,8 @@
 
 Aplicación full-stack de catálogo, venta por WhatsApp y backoffice para una tienda de tecnología. Next.js 15, React 19, TypeScript, Supabase y una integración selectiva de Astryx.
 
+> **English summary:** A full-stack e-commerce starter with a public catalog, WhatsApp checkout and an admin backoffice. Built with Next.js 15, React 19, TypeScript, Supabase and a selective Astryx integration.
+
 [![CI](https://github.com/luchonicolini/Panel_demo/actions/workflows/ci.yml/badge.svg)](https://github.com/luchonicolini/Panel_demo/actions/workflows/ci.yml)
 ![Node.js](https://img.shields.io/badge/Node.js-22.13%2B-339933?logo=nodedotjs&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-15-000?logo=nextdotjs&logoColor=white)
@@ -28,6 +30,8 @@ Aplicación full-stack de catálogo, venta por WhatsApp y backoffice para una ti
 Requisitos: **Node.js 22.13 o superior** y npm 10+.
 
 ```bash
+git clone https://github.com/luchonicolini/Panel_demo.git
+cd Panel_demo
 npm install
 npm run dev
 ```
